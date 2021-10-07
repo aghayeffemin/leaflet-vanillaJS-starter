@@ -1,0 +1,121 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>leaflet with vanilla JS</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="lib/icon-font/lineicons.css">
+    <link rel="stylesheet" href="lib/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="lib/leaflet/leaflet.js"></script>
+</head>
+
+<body>
+    <div class="main-toolbar flex-container">
+        <div class="logo-container">
+            <img src="images/logo-taskbar.png">
+        </div>
+        <div class="buttons-container">
+            <div class="toolbar-btn-container">
+                <button class="toolbar-btn" onclick="runCommand('zoom-in')">
+                    <i class="lni lni-zoom-in"></i>
+                    <span class="tooltiptext">Zoom in</span>
+                </button>
+            </div>
+            <div class="toolbar-btn-container">
+                <button class="toolbar-btn" onclick="runCommand('zoom-out')">
+                    <i class="lni lni-zoom-out"></i>
+                    <span class="tooltiptext">Zoom out</span>
+                </button>
+            </div>
+            <div class="toolbar-btn-container">
+                <div class="template-holder-grid">
+                    <div class="template-holder-button">
+                        <button class="toolbar-btn" data-contentid="basemap_holder_div"
+                            onclick="runCommand('open-basemap-holder', this)">
+                            <i class="lni lni-layers"></i>
+                            <span class="tooltiptext">Basemaps</span>
+                        </button>
+                    </div>
+                    <div class="template-holder-content" id="basemap_holder_div" style="display: none;">
+                        <table class="basemap-holder-table">
+                            <tr>
+                                <td>
+                                    <input type="radio" id="satellite" name="bmaptype" data-basemapid="satellite"
+                                        checked onchange="cActivateBasemap(this)">
+                                </td>
+                                <td>
+                                    <label for="satellite">Satellite</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" id="streets" name="bmaptype" data-basemapid="streets"
+                                        onchange="cActivateBasemap(this)">
+                                </td>
+                                <td>
+                                    <label for="streets">Streets</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="toolbar-btn-container">
+                <div class="template-holder-grid">
+                    <div class="template-holder-button">
+                        <button class="toolbar-btn" data-contentid="gotocoordinate_holder_div"
+                            onclick="runCommand('goto-coordinate-holder', this)">
+                            <i class="lni lni-map-marker"></i>
+                            <span class="tooltiptext">Go to coordinate</span>
+                        </button>
+                    </div>
+                    <div class="template-holder-content" id="gotocoordinate_holder_div" style="display: none;">
+                        <table class="gotocoordinate-holder-table">
+                            <tr>
+                                <td>
+                                    <input type="number" class="textbox" id="latitude" placeholder="latitude">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="textbox" id="longitude" placeholder="longitude">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="button" onclick="cGoToCoordinate()">GO</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="toolbar-btn-container">
+                <button class="toolbar-btn" onclick="runCommand('reset-map-state')">
+                    <i class="lni lni-spinner-arrow"></i>
+                    <span class="tooltiptext">Reset Map</span>
+                </button>
+            </div>
+            <div class="toolbar-btn-container">
+                <button class="toolbar-btn" onclick="runCommand('clear-graphics')">
+                    <i class="lni lni-trash-can"></i>
+                    <span class="tooltiptext">Clear Graphics</span>
+                </button>
+            </div>
+            <div class="toolbar-btn-container">
+                <button class="toolbar-btn" onclick="runCommand('full-screen')">
+                    <i class="lni lni-full-screen"></i>
+                    <span class="tooltiptext">Fullscreen</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="map_container"></div>
+    <script src="js/map.js"></script>
+</body>
+
+</html>

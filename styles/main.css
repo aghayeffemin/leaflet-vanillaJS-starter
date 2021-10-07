@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#map_container {
+    min-height: 100vh;
+}
+
+.main-toolbar {
+    position: absolute;
+    top: 0;
+    z-index: 500;
+    text-align: center;
+    width: 50px;
+    left: 1%;
+    top: 4%;
+}
+
+.buttons-container {
+    margin-left: 13px;
+    width: 100%;
+}
+
+.logo-container img {
+    max-width: 4.8rem;
+}
+
+.lni {
+    font-size: 16px;
+    color: #000000;
+}
+
+.toolbar-btn {
+    z-index: 600;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 100%;
+    background-color: #ffffff;
+    margin-top: 8px;
+    border: none;
+    box-shadow: 0 1px 2px 1px rgba(50, 50, 50, .2) !important
+}
+
+.template-holder-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-left: 0.4rem;
+}
+
+.template-holder-button {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.template-holder-content {
+    position: absolute;
+    grid-column: 2;
+    grid-row: 1;
+    background-color: white;
+    border-radius: 0.5rem;
+    margin-left: 3rem;
+}
+
+.basemap-holder-table {
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.gotocoordinate-holder-table {
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.gotocoordinate-holder-table tr {
+    margin-top: 0.5rem;
+}
+
+.basemap-holder-table label {
+    margin-left: 0.2rem;
+    font-size: 16px;
+}
+
+.button {
+    background-color: #03aa6f;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.textbox {
+    font-size: 14px;
+    margin-top: 5px;
+    padding: 12px 16px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(0, 0, 0, 0.555);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    left: 130%;
+}
+
+.toolbar-btn:hover .tooltiptext {
+    visibility: visible;
+}
