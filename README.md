@@ -4,7 +4,11 @@ This is a starter template for leaflet and VanillaJS combination. No extra front
 
 [Demo](https://leaflet-vanillajs-starter.firebaseapp.com/)
 
-## Layers
+# Screenshot
+
+![Optional Text](/capture.PNG)
+
+## Additionally
 
 - leaflet - you can read more about leaflet [here](https://leafletjs.com/)
 - lineicons - you can find more free icons [here](https://lineicons.com/)
