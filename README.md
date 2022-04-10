@@ -6,7 +6,7 @@ This is a starter template for leaflet and VanillaJS combination. No extra front
 
 # Screenshot
 
-![Optional Text](/capture.PNG)
+![Optional Text](/leaflet-preview.png)
 
 ## Additionally
 
